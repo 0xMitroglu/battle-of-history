@@ -21,7 +21,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/battle-of-history.git
+git clone https://github.com/0xMitroglu/battle-of-history.git
 
 # Navigate to the project folder
 cd battle-of-history
