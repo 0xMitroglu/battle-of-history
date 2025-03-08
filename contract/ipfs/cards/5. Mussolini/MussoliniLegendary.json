@@ -1,0 +1,23 @@
+{
+    "name": "Benito Mussolini",
+    "description": "Benito Mussolini was a charismatic politician and the founder of Italian fascism, which he used to establish himself as Italy's dictator from 1922 until his downfall in 1943. He was known for his gift of oratory, his military ambition, and his emphasis on national pride and unity. However, Mussolini was also notorious for his authoritarian regime, his suppression of political opposition, and his alliance with Nazi Germany, which led to Italy's defeat in World War II and brought tremendous suffering to the Italian people.",
+    "image": "https://ipfs.io/ipfs/QmWGah4Bwv2CqvXMqGpLeviYUFSe3zcuRnwTmLHSTVmRHi",
+    "attributes": [
+        {
+            "trait_type": "card-type",
+            "value": "LEGENDARY"
+        },
+        {
+            "trait_type": "attack",
+            "value": 96
+        },
+        {
+            "trait_type": "defence",
+            "value": 91
+        },
+        {
+            "trait_type": "tactics",
+            "value": 90
+        }
+    ]
+}

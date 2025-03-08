@@ -1,0 +1,23 @@
+{
+    "name": "Otto von Bismarck",
+    "description": "Otto von Bismarck was known for his exceptional political acumen, strategic thinking, and ability to manipulate international relations to further his goals. However, he was also criticized for his authoritarian style of governance and his tendency to rely on aggressive tactics to achieve his objectives.",
+    "image": "https://ipfs.io/ipfs/QmQQ9pmknUjHEWwZBQJFspgrMpA6VmboeADU73A9qJ3Brs",
+    "attributes": [
+        {
+            "trait_type": "card-type",
+            "value": "RARE"
+        },
+        {
+            "trait_type": "attack",
+            "value": 65
+        },
+        {
+            "trait_type": "defence",
+            "value": 70
+        },
+        {
+            "trait_type": "tactics",
+            "value": 74
+        }
+    ]
+}

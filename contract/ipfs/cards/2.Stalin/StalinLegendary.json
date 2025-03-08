@@ -1,0 +1,23 @@
+{
+    "name": "Josef Stalin",
+    "description": "Joseph Stalin was a skilled political operator who played a central role in the establishment of the Soviet Union as a superpower. He was renowned for his unwavering determination, tactical brilliance, and his ability to inspire loyalty among his supporters. However, Stalin was also notorious for his brutal purges and his willingness to use extreme measures to maintain power, which resulted in the suffering of millions of people under his regime.",
+    "image": "https://ipfs.io/ipfs/QmYAiCs4t2A6gdo9AyoBX9eFW2ETtq8hjjQdjUsweCvEof",
+    "attributes": [
+        {
+            "trait_type": "card-type",
+            "value": "LEGENDARY"
+        },
+        {
+            "trait_type": "attack",
+            "value": 90
+        },
+        {
+            "trait_type": "defence",
+            "value": 91
+        },
+        {
+            "trait_type": "tactics",
+            "value": 98
+        }
+    ]
+}

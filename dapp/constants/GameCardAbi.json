@@ -1,0 +1,402 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "nftBoxAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "characterAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "vrfCoordinatorV2",
+                "type": "address"
+            },
+            {
+                "internalType": "uint64",
+                "name": "subscriptionId",
+                "type": "uint64"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "gasLane",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "uint32",
+                "name": "callbackGasLimit",
+                "type": "uint32"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "GameCard__AlreadyOpponentFound",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "GameCard__NotOpponent",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "GameCard__NotOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "GameCard__PlayerNotAllowed",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "GameCard__PlayerNotFound",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "have",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "want",
+                "type": "address"
+            }
+        ],
+        "name": "OnlyCoordinatorCanFulfill",
+        "type": "error"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "caller",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256[3]",
+                "name": "tokenId",
+                "type": "uint256[3]"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "opponent",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum GameCard.PlayerStatus",
+                "name": "status",
+                "type": "uint8"
+            }
+        ],
+        "name": "AddedToList",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "winner",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "looser",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "draw",
+                "type": "bool"
+            }
+        ],
+        "name": "Match",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "player1",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "player2",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "requestId",
+                "type": "uint256"
+            }
+        ],
+        "name": "MatchBeginsSoon",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "player1",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "player2",
+                "type": "address"
+            }
+        ],
+        "name": "MatchFound",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "currentPlayers",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "tokenId1",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId2",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId3",
+                "type": "uint256"
+            }
+        ],
+        "name": "enterGame",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "finshedGames",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "winner",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "loser",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "draw",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getCurrentPlayers",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "user",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "index",
+                "type": "uint256"
+            }
+        ],
+        "name": "getTokenIds",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "i_contractCharacter",
+        "outputs": [
+            {
+                "internalType": "contract Characters",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "i_contractNftBox",
+        "outputs": [
+            {
+                "internalType": "contract NftBox",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "requestId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "randomWords",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "rawFulfillRandomWords",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "s_addressInfo",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "game",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "player",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "opponent",
+                "type": "address"
+            },
+            {
+                "internalType": "enum GameCard.PlayerStatus",
+                "name": "status",
+                "type": "uint8"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "s_gameCounter",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "s_requestIdToPlayers",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]

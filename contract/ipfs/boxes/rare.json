@@ -1,0 +1,11 @@
+{
+    "name": "Rare Card-Box",
+    "description": "A rare war game chest contains a selection of rare war commanders that offer more unique abilities and can be more powerful than normal commanders. These commanders are harder to come by than normal commanders, and players may need to collect several rare commanders to build a truly formidable army.",
+    "image": "https://ipfs.io/ipfs/QmfBx7hjZrbr67SZPcL6SYZcRcnTY1MP5ruSJAQAZPAbDL",
+    "attributes": [
+        {
+            "trait_type": "CARD-TYPE",
+            "value": "RARE"
+        }
+    ]
+}

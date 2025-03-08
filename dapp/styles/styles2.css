@@ -1,0 +1,855 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:
+        "Roboto", sans-serif;
+    ;
+
+    overflow-x: hidden;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 8vh;
+    padding: 1vh 0.5vw;
+    background-color: #355a5e;
+    overflow: hidden;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 33vw;
+    height: 100%;
+}
+
+.nav-img {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 1vw;
+}
+
+.nav-img img {
+    height: 100%;
+    width: fit-content;
+    object-fit: contain;
+}
+
+.nav-title {
+    font-size: 10px;
+    overflow: hidden;
+}
+
+.nav-accountDetails {
+    display: flex;
+    padding-right: 1vw;
+    justify-content: right;
+}
+
+.nav-accountDetails button {
+    width: fit-content;
+    height: 80%;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.connectWallet {
+    padding: 1em 1.8em;
+    height: 100%;
+    border: 2px solid #17c3b2;
+    position: relative;
+
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: 0.3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #17c3b2;
+}
+
+.connectWallet::before {
+    content: "";
+    width: 0;
+    height: 1000%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #17c3b2;
+    transition: 0.5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.connectWallet:hover::before {
+    width: 105%;
+}
+
+.connectWallet:hover {
+    color: white;
+}
+
+.nav-user {
+    position: relative;
+    right: 0;
+    display: block;
+    text-align: right;
+    font-size: 16px;
+    overflow: hidden;
+    font-weight: 200;
+}
+
+.fa {
+    width: 1vw;
+    margin-right: 1vh;
+}
+
+.nav-item div {
+    font-weight: 300;
+}
+
+
+.nav-item :hover {
+    cursor: pointer;
+    font-weight: 900;
+    transition: 2s;
+}
+
+@media (max-width: 1250px) {
+    .nav-item div {
+        font-size: 0.8rem;
+    }
+
+    .fa {
+        width: 0.7vw;
+        margin-right: 0.5vh;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav-item div {
+        font-size: 0.5rem;
+    }
+}
+
+.HomePage {
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageBackground {
+    position: absolute;
+    height: 92vh;
+    width: 100vw;
+    z-index: 0;
+}
+
+.text {
+    z-index: 1;
+    display: block;
+    color: white;
+    font-weight: 300;
+    width: 70vw;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.text h1 {
+    display: block;
+    color: white;
+    font-weight: 900;
+    width: 70vw;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 1vh;
+}
+
+.HomePage div button {
+    display: block;
+    padding: 2vh 4vh;
+    font-weight: 900;
+    border-radius: 10px;
+    border: 5px solid white;
+}
+
+
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33vw;
+    height: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startNow {
+    margin-top: 4vh;
+    background-color: transparent;
+    color: white;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.startNow:hover {
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    font-weight: 900;
+    transition: 1s;
+}
+
+.startNow {
+    padding: 0.8em 1.8em;
+    position: relative;
+
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: 0.3s;
+    z-index: 1;
+    font-family: inherit;
+    color: white;
+    font-weight: 300;
+}
+
+.startNow::before {
+    content: "";
+    width: 0;
+    height: 1000%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: white;
+    color: black;
+    transition: 0.5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.startNow:hover::before {
+    width: 105%;
+    color: black;
+}
+
+.startNow:hover {
+    color: black;
+    font-weight: 900;
+}
+
+
+.boxes-page {
+
+    background: rgb(76, 115, 113);
+    background: linear-gradient(180deg, rgba(76, 115, 113, 1) 0%, rgba(87, 150, 159, 1) 100%);
+    width: 100vw;
+    height: 92vh;
+}
+
+.boxes-container {
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes-box {
+    margin-right: 2vw;
+    margin-left: 2vw;
+    width: 25vw;
+
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+
+
+.boxes-img {
+    width: 20vw;
+    height: 20vw;
+}
+
+.box-name {
+    display: flex;
+    justify-content: center;
+    align-items: 900;
+    font-weight: bolder;
+    font-size: 2vw;
+    overflow: hidden;
+}
+
+.box-price-usd {
+    margin-top: 0.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.5vw;
+}
+
+.box-price-eth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+
+.button-load-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.button-box {
+    border: 2px solid black;
+    width: 20vw;
+    height: 7vh;
+    background-color: transparent;
+    font-weight: 300;
+    font-size: 2vw;
+    padding: 0.8vh 0vw;
+    cursor: pointer;
+    overflow: hidden;
+
+
+}
+
+.button-box:hover {
+    background-color: rgb(12, 148, 12);
+    font-weight: 500;
+    border: 2px solid black;
+
+
+}
+
+.lds-ring {
+    display: none;
+    position: relative;
+    width: 7vh;
+    height: 7vh;
+    overflow: hidden;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 5.6vh;
+    height: 5.6vh;
+    margin: 0.7vh;
+    border: 0.7vh solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.user-page {
+    min-height: 92vh;
+    background: rgb(76, 115, 113);
+    background: linear-gradient(180deg, rgba(76, 115, 113, 1) 0%, rgba(87, 150, 159, 1) 100%);
+
+
+}
+
+.user-container {
+    margin-top: 5vh;
+    width: 100vw;
+}
+
+.user-object {
+    display: inline-block;
+    width: 20vw;
+    overflow: hidden;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+    margin-bottom: 4vh;
+}
+
+.user-object-image-div {
+    margin-top: 2vh;
+    display: flex;
+    justify-content:
+        center;
+    align-items: center;
+    width: 100%;
+}
+
+.user-object-image {
+    width: 15vw;
+}
+
+
+.user-normalBox {
+    border-radius: 10px;
+    border: 3px solid gray;
+}
+
+.user-rareBox {
+    border-radius: 10px;
+    border: 3px solid blue;
+}
+
+.user-legendaryBox {
+    border-radius: 10px;
+    border: 3px solid gold;
+}
+
+.user-object-title {
+    margin-top: 1vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.user-object-info {
+    margin-top: 1vh;
+    padding: 0 2.5vw;
+}
+
+
+.bold {
+    font-weight: 600;
+}
+
+.user-object-button-sell {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+    height: 4.5vh;
+}
+
+
+
+.user-openBox-legendary {
+    width: 15vw;
+    border-radius: 3px;
+    border: 2px solid black;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 300;
+    height: 4.5vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.user-openBox-legendary:hover {
+    border: 4px solid gold;
+    font-weight: 600;
+
+}
+
+.user-openBox-rare {
+    width: 15vw;
+    border-radius: 3px;
+    border: 2px solid black;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 300;
+    height: 4.5vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.user-openBox-rare:hover {
+    border: 4px solid blue;
+    font-weight: 600;
+
+}
+
+.user-openBox-normal {
+    width: 15vw;
+    border-radius: 3px;
+    border: 2px solid black;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 300;
+    height: 4.5vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.user-openBox-normal:hover {
+    border: 4px solid gray;
+    font-weight: 600;
+
+}
+
+
+
+.loading-ring {
+    display: none;
+    position: relative;
+    width: 4.5vh;
+    height: 4.5vh;
+    overflow: hidden;
+}
+
+.loading-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 3.6vh;
+    height: 3.6vh;
+    margin: 0.45vh;
+    border: 0.45vh solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.loading-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.loading-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.loading-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.user-nft-description {
+    display: none;
+    width: 20;
+    overflow: hidden;
+}
+
+.user-nft-description-text {
+    padding: 2vh 2vw;
+}
+
+.user-nft-return {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+    font-size: 1.2rem;
+}
+
+.user-select {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.user-select-border {
+    padding: 2vh 2vw;
+    border-radius: 10px;
+    border: 3px solid #355a5e;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.user-select-text {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5vw;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.user-select-select {}
+
+.user-select-select select {
+    padding: 1vh 1vw;
+    color: black;
+    border: none;
+    border-radius: none;
+    background: transparent;
+    border: 1px solid black;
+
+    width: 10vw;
+}
+
+
+
+select:hover {
+    border: 1px solid #355a5e;
+    background-color: #355a5e;
+}
+
+select:focus {
+    border: 1px solid #355a5e;
+    background-color: #355a5e;
+}
+
+select option {
+    font-size: 0.9rem;
+    background: #355a5e;
+    color: black;
+}
+
+select option:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+
+.sell-page {
+    min-height: 92vh;
+    background: rgb(76, 115, 113);
+    background: linear-gradient(180deg, rgba(76, 115, 113, 1) 0%, rgba(87, 150, 159, 1) 100%);
+}
+
+.nft-sell-object {
+    margin-top: 5vh;
+    width: 100vw;
+}
+
+.sell-nft {
+    display: inline-block;
+    width: 10.7vw;
+    overflow: hidden;
+    margin-left: 0.9vw;
+    margin-right: 0.9vw;
+    margin-bottom: 4vh;
+    height: 30vh;
+}
+
+.sell-nft-image {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sell-img {
+    height: 10vh;
+}
+
+.sell-nft-name {
+    height: 3vh;
+    overflow: hidden;
+    font-size: 0.8rem;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sel-nft-price {
+    margin-left: 1vw;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.sell-nft-options {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: 11vh;
+}
+
+.sell-sell-button {
+    margin-top: 1vh;
+    width: 100%;
+    height: 4vh;
+    margin-bottom: 1vh;
+    border: 1px solid green;
+    border-radius: 2px;
+    background: transparent;
+}
+
+.sell-sell-button:hover {
+    background-color: green;
+}
+
+.sell-delete-button {
+    width: 100%;
+    height: 4vh;
+    border: 1px solid red;
+    border-radius: 2px;
+    background: transparent;
+}
+
+.sell-delete-button:hover {
+    background-color: red;
+}
+
+.sell-nft-myNft p {
+    font-size: 0.6rem;
+}
+
+.sell-nft-upload {
+    display: none;
+}
+
+.sell-nft-upload-button {
+    width: 45%;
+    height: 4vh;
+    border: 1px solid green;
+    border-radius: 2px;
+    background: transparent;
+}
+
+.sell-nft-upload-button:hover {
+    background-color: green;
+    font-weight: 900;
+}
+
+.sell-nft-upload-input {
+    padding-left: 0.5vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 100%;
+    height: 4vh;
+    border-radius: 2px;
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+}
+
+.sell-nft-upload-input::placeholder {
+    color: black;
+}
+
+.sell-nft-upload-cancel {
+    width: 45%;
+    margin-left: 10%;
+    height: 4vh;
+    background: transparent;
+    border: 1px solid gray;
+}
+
+.sell-nft-upload-cancel:hover {
+    background-color: gray;
+}
+
+.sell-nft-buttons {}
+
+.sell-nft-center-loading {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+}
+
+.sell-button-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.sell-button-view-button {
+    background: transparent;
+    padding: 1vh 2vw;
+    border: 2px solid #17c3b2;
+}
+
+.sell-border-normal {
+    border: 2px solid gray;
+    height: 100%;
+}
+
+.sell-border-rare {
+    border: 2px solid blue;
+    height: 100%;
+}
+
+.sell-border-legendary {
+    border: 2px solid gold;
+    height: 100%;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.sell-nft-buy-button {
+    margin-top: 0.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sell-nft-buy-button button {
+    padding: 0.3vh 2vw;
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.proceeds-button {
+    margin-left: 1vw;
+}
+
+.play-page {
+    background: rgb(76, 115, 113);
+    background: linear-gradient(180deg, rgba(76, 115, 113, 1) 0%, rgba(87, 150, 159, 1) 100%);
+    width: 100vw;
+    height: 92vh;
+}

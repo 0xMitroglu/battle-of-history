@@ -1,0 +1,11 @@
+{
+    "name": "Legendary Card-Box",
+    "description": "A legendary war game chest contains a selection of the most powerful and rarest war commanders in the game. These commanders often have the most unique and powerful abilities, and collecting a full set of legendary commanders can be a major achievement for players. Legendary war game chests are the rarest and most valuable of all chests.",
+    "image": "https://ipfs.io/ipfs/QmaRHxiD4EadnN68SedsWTBmiZ6FTNi6jnCkxDXNHzoTKV",
+    "attributes": [
+        {
+            "trait_type": "BOX-TYPE",
+            "value": "LEGENDARY"
+        }
+    ]
+}

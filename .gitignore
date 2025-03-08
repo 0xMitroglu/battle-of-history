@@ -1,0 +1,5 @@
+contract/node_modules
+contract/package-lock.json
+contract/.env
+dapp/node_modules
+dapp/package-lock.json

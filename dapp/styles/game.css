@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/*  || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--DARK-COLOR);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1d1d1d;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 75vh;
+    /* Height of the thumb */
+}
+
+/* --------Variables---------- */
+:root {
+    --BG-COLOR:
+        /* #1A202C */
+        /* #4A5568 */
+        #293346;
+    --FC-WHITE: rgba(255, 255, 255, 0.92);
+    --BODY-FF: DM Sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --NAV-BG: linear-gradient(to right, #283244, #202837);
+    --DARK-COLOR: #4a5568;
+    --BGCOLOR: #1d1d1d;
+    --BGCOLOR: #023047;
+    --BGGRADIENT: #000000;
+    --HOME-H1-FS: clamp(30px, 4.5vw, 7vw);
+    --NAV-BG: linear-gradient(to right, #283244, #202837);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+/* -----User Styles------ */
+
+.play-page {
+    min-height: calc(100vh - 75px);
+    background: var(--NAV-BG);
+    display: flex;
+    flex-direction: column;
+    padding:
+        /* calc(10px + 10vh) */
+        0 5vw 0
+        /* calc(10px + 10vh) */
+        5vw;
+}
+
+.play-page .error {
+    margin-top: 10vh;
+    font-size: clamp(14px, 2vw, 25px);
+    text-align: center;
+    font-weight: 400;
+}
+
+.error-p {
+    text-align: center;
+    margin-top: 2vh;
+    font-size: clamp(10px, 1.7vw, 18px);
+}
+
+.play-buttons-nav {
+    margin: 0 auto;
+    margin-top: calc(10px + 10vh);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2rem;
+    transition: 0.5s;
+    justify-content: center;
+}
+
+.play-buttons-nav button {
+    width: 300px;
+    color: white;
+    background: transparent;
+
+    border: 3px solid white;
+    padding: 1em 1.5em;
+    /* display: flex;
+    justify-content: space-between; */
+
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.play-buttons-nav button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+/* ----Game Select Nft---- */
+.game-menu-nfts {
+    position: relative;
+    padding-top: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+
+
+.game-menu-nfts .error {
+    position: absolute;
+    top: 0;
+}
+
+.game-menu-button,
+.game-menu-nfts-error {
+
+    position: absolute;
+    top: 0;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.game-menu-nfts-error h1 {
+    font-size: clamp(14px, 2vw, 25px);
+    text-align: center;
+    font-weight: 400;
+}
+
+.game-menu-button button {
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: 2px solid white;
+    color: white;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    padding: 0.5em 2em;
+    transform: scale(0.9);
+    transition: 1s;
+}
+
+.game-menu-button button:hover {
+    transition: 1s;
+    transform: scale(1.1);
+
+    background-color: white;
+    color: black;
+    font-weight: 500;
+}
+
+.game-menu-nft {
+    width: 150px;
+    margin-bottom: 5%;
+}
+
+.game-menu-nft img {
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.game-menu-nft h4 {
+    text-align: center;
+    margin: 0.2em 0;
+    font-size: 0.8rem;
+}
+
+.game-menu-nft p {
+    margin-bottom: 0.1em;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.5em;
+}
+
+.game-menu-nft-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0 5px 0;
+}
+
+.game-menu-nft-button button {
+    font-size: 0.8rem;
+    padding: 0.2em 1.5em;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.game-menu-nft-button button:hover {
+    background-color: white;
+    color: black;
+
+}
+
+.game-menu-nft-button .button-remove {
+    background-color: white;
+    color: black;
+    font-weight: 900;
+}
+
+.play-home-center-loading {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.play-home-center-loading .loading-ring {
+    display: none;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.play-home-center-loading .loading-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.play-battle-logs .error,
+.play-battle-logs .error-p {
+    margin-top: 0;
+}
+
+.play-battle-logs {
+    margin-top: 10vh;
+    flex-direction: column;
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+
+}
+
+.play-battle-log {
+    position: relative;
+    margin-bottom: 50px;
+    height: 170px;
+    padding: 3vh 3vw;
+    display: flex;
+    border-radius: 12px;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 80%;
+    min-width: 250px;
+}
+
+.play-battle-logs p {
+    font-size: clamp(12px, 1.7vw, 16px);
+    margin-top: 5px;
+}
+
+.play-battle-log-result {
+    display: flex;
+    /*  align-items: center; */
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.play-battle-log-result h1 {
+    font-size: clamp(12px, 2vw, 1.2rem);
+    font-weight: 900;
+
+}
+
+.play-battle-log img {
+    height: 80%;
+    width: auto;
+}
+
+.play-battle-log-you,
+.play-battle-log-opponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.play-battle-log-you h1,
+.play-battle-log-opponent h1 {
+    font-size: clamp(10px, 2vw, 1.2rem);
+    font-weight: 300;
+}
+
+.play-battle-log-you img,
+.play-battle-log-opponent img {
+    height: 50%;
+}
+
+.play-battle-log-win {
+    background: rgb(255, 215, 0);
+    background: linear-gradient(4deg, rgba(235, 195, 0, 0.7) 0%, rgba(245, 135, 40, 0.7) 70%);
+    box-shadow: 0 0 5px rgb(255, 215, 0);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.play-battle-log-win:hover {
+    background: rgb(255, 215, 0);
+    background: linear-gradient(4deg, rgba(235, 195, 0, 0.9) 0%, rgba(245, 135, 40, 0.9) 70%);
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(255, 215, 0);
+}
+
+.play-battle-log-defeat {
+    background: rgb(253, 29, 29);
+    background: linear-gradient(90deg, rgba(253, 29, 29, 0.7) 0%, rgba(252, 69, 69, 0.7) 100%);
+    box-shadow: 0 0 5px rgb(253, 29, 29);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.play-battle-log-defeat:hover {
+    background: rgb(253, 29, 29);
+
+    background: linear-gradient(90deg, rgba(253, 29, 29, 0.9) 0%, rgba(252, 69, 69, 0.9) 100%);
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(253, 29, 29);
+}
+
+.play-battle-log-draw {
+    background: rgb(128, 128, 128);
+    background: linear-gradient(4deg, rgba(158, 158, 158, 0.7) 0%, rgba(128, 128, 128, 0.7) 70%);
+    box-shadow: 0 0 5px rgb(128, 128, 128);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.play-battle-log-draw:hover {
+    background: linear-gradient(4deg, rgba(158, 158, 158, 0.9) 0%, rgba(128, 128, 128, 0.9) 70%);
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(128, 128, 128);
+}
+
+.play-battle-description {
+
+    margin-top: 10vh;
+}
+
+.play-battle-description ol {
+    padding: 0 5vw;
+}
+
+.play-battle-description li {
+    margin-bottom: 5vh;
+    font-size: clamp(15px, 2vw, 1.3rem);
+    line-height: clamp(20px, 2.5vw, 2rem);
+}
+
+.play-searching {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.play-searching-images {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.play-searching-images img {
+    min-width: 80px;
+    width: 10%;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+
+.play-searching h1 {
+    margin-top: 10vh;
+    font-size: clamp(17px, 2vw, 1.7rem);
+    text-align: center;
+}
+
+.play-searching p {
+    font-weight: 100;
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: clamp(12px, 1.6vw, 1rem);
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.first-image {
+    animation: moveUpDown 2s ease-in-out infinite;
+    /* Adjust the duration and animation timing as per your preference */
+}
+
+.second-image {
+    animation: moveUpDown 2s ease-in-out infinite 0.5s;
+    /* Delay the animation by 1 second to create the chain effect */
+}
+
+.third-image {
+    animation: moveUpDown 2s ease-in-out infinite 1s;
+    /* Delay the animation by 2 seconds to create the chain effect */
+}
+
+.play-found {
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100vh - 75px - 10vh);
+    width: 100%;
+    position: relative;
+
+}
+
+
+.play-found-me,
+.play-found-opponent {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 75px - 10vh);
+    position: relative;
+}
+
+
+
+
+.play-found-me-nft,
+.play-found-opponent-nft {}
+
+
+.play-found-me-nft img,
+.play-found-opponent-nft img {
+    min-height: 100px;
+    height: 20vh;
+    border-radius: 12px;
+    width: auto;
+}
+
+
+
+
+
+
+.play-found-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.play-found-info .play-found-swords {
+    display: flex;
+    padding: 4vh;
+
+}
+
+@media screen and (max-width: 768px) {
+    .play-found {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+    }
+
+    .play-found-me,
+    .play-found-opponent {
+        flex-direction: row;
+        height: fit-content;
+        gap: 2rem;
+    }
+
+    .play-found-me-nft img,
+    .play-found-opponent-nft img {
+        height: 50px;
+    }
+
+}
+
+.play-found-info h1 {
+    font-size: 2.5rem;
+    margin-top: 2.5vh;
+    font-weight: 900;
+    margin-bottom: 2vh;
+
+}
+
+.play-found-info h3 {
+    font-weight: 100;
+}
+
+.play-found-players {
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+    min-width: 300px;
+}
+
+.play-found-players h3 {
+    text-align: left;
+    flex-basis: 33%;
+}
+
+.play-found-players .play-found-players-text-you {
+    text-align: right;
+}
+
+.play-found-players-text-you {
+    padding-right: 0.5em;
+}
+
+.play-found-players-text-opponent {
+    padding-left: 0.5em;
+}
+
+.play-found-players img {
+    width: 20px;
+}
+
+.play-found-swords img {
+    width: 15vw;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+.play-found-info h2 {
+    font-size: 1.8rem;
+    font-weight: 100;
+    margin-top: 30px;
+}
+
+@keyframes fightAnimationLeft {
+    0% {
+        transform: translateX(4.5vw) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateX(5.7vw) rotate(15deg);
+    }
+
+
+
+    100% {
+        transform: translateX(4.5vw) rotate(-10deg);
+    }
+}
+
+@keyframes fightAnimationRight {
+    0% {
+        transform: translateX(-4.5vw) rotate(10deg);
+    }
+
+    50% {
+        transform: translateX(-5.7vw) rotate(-15deg);
+    }
+
+    100% {
+        transform: translateX(-4.5vw) rotate(10deg);
+    }
+}
+
+.sword-left {
+    animation: fightAnimationLeft 2s ease-in-out infinite;
+}
+
+.sword-right {
+    animation: fightAnimationRight 2s ease-in-out infinite;
+    /* Reverse the animation for the right sword */
+    /* Add a delay to create a staggered effect */
+}
+
+
+/* -----Color----- */
+
+.game-menu-nft-normal {
+    height: 100%;
+    background: rgb(128, 128, 128);
+    background: linear-gradient(4deg, rgba(158, 158, 158, 1) 0%, rgba(128, 128, 128, 1) 70%);
+    box-shadow: 0 0 5px rgb(128, 128, 128);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.game-menu-nft-rare {
+    height: 100%;
+    background: rgb(0, 0, 255);
+    background: linear-gradient(4deg, rgba(50, 80, 215, 1) 0%, rgba(20, 20, 245, 1) 70%);
+    box-shadow: 0 0 5px rgb(0, 42, 255);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.game-menu-nft-legendary {
+    height: 100%;
+    background: rgb(255, 215, 0);
+    background: linear-gradient(4deg, rgba(235, 195, 0, 1) 0%, rgba(245, 135, 40, 1) 70%);
+    box-shadow: 0 0 5px rgb(255, 215, 0);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.game-menu-nft-legendary:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(255, 215, 0);
+}
+
+.game-menu-nft-rare:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(0, 0, 255);
+}
+
+.game-menu-nft-normal:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(128, 128, 128);
+}
+
+/* ------- Result.------ */
+.play-battle-result {
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 75px - 10vh);
+    width: 100%;
+    position: relative;
+}
+
+.play-battle-result-box {
+    padding: 1rem;
+    width: 400px;
+    font: 10px;
+    border-radius: 15px;
+}
+
+.play-battle-result-title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5em;
+    margin-bottom: 15px;
+}
+
+.play-battle-result-title img {
+    width: 50px;
+}
+
+.play-battle-result-title h1 {
+    font-weight: 900;
+}
+
+.play-battle-result-winner {
+    margin-bottom: 20px;
+}
+
+.play-battle-result-info {
+    font-size: 20px;
+    font-weight: 100;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+
+.play-battle-result-info span {
+    font-weight: 500;
+}
+
+.play-battle-result-nfts {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.play-battle-result-nfts img {
+    border-radius: 50%;
+    width: 70px;
+}
+
+.play-battle-result-nft p {
+    font-size: 12px;
+    text-align: center;
+}
+
+.play-battle-result-winner {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.play-battle-result-button {
+    display: flex;
+    justify-content: center;
+
+}
+
+.play-battle-result-button button {
+    font-size: 15px;
+    padding: 0.4em 1.2em;
+    background: transparent;
+    border-radius: 12px;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.play-battle-result-button button:hover {
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+}
+
+.play-battle-result-defeat {
+    background: rgb(253, 29, 29);
+    background: linear-gradient(90deg, rgba(253, 29, 29, 0.8) 0%, rgba(252, 69, 69, 0.8) 100%);
+    box-shadow: 0 0 5px rgb(253, 29, 29);
+    border-radius: 12px;
+}
+
+.play-battle-result-win {
+    background: rgb(255, 215, 0);
+    background: linear-gradient(4deg, rgba(235, 195, 0, 0.8) 0%, rgba(245, 135, 40, 0.8) 70%);
+    box-shadow: 0 0 5px rgb(255, 215, 0);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.play-battle-result-draw {
+    background: rgb(128, 128, 128);
+    background: linear-gradient(4deg, rgba(158, 158, 158, 0.8) 0%, rgba(128, 128, 128, 0.8) 70%);
+    box-shadow: 0 0 5px rgb(128, 128, 128);
+    border-radius: 12px;
+}

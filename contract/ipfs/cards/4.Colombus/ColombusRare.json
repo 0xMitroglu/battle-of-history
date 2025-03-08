@@ -1,0 +1,23 @@
+{
+    "name": "Christopher Columbus",
+    "description": "Christopher Columbus was a skilled navigator and explorer who is widely credited with initiating the European discovery of the Americas. He was known for his persistence, bravery, and determination to find a new trade route to Asia. However, Columbus was also a controversial figure due to his treatment of indigenous peoples, his involvement in the slave trade, and his role in the exploitation and colonization of the Americas, which has led to a lasting legacy of harm and oppression for indigenous populations.",
+    "image": "https://ipfs.io/ipfs/QmQLy9dD3MA5Vy2UJXoJHfNCP47L1hnw6HZLFWdpUVqYQ5",
+    "attributes": [
+        {
+            "trait_type": "card-type",
+            "value": "RARE"
+        },
+        {
+            "trait_type": "attack",
+            "value": 63
+        },
+        {
+            "trait_type": "defence",
+            "value": 61
+        },
+        {
+            "trait_type": "tactics",
+            "value": 67
+        }
+    ]
+}

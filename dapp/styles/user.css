@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/*  || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--DARK-COLOR);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1d1d1d;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 75vh;
+    /* Height of the thumb */
+}
+
+/* --------Variables---------- */
+:root {
+    --BG-COLOR:
+        /* #1A202C */
+        /* #4A5568 */
+        #293346;
+    --FC-WHITE: rgba(255, 255, 255, 0.92);
+    --BODY-FF: DM Sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --NAV-BG: linear-gradient(to right, #283244, #202837);
+    --DARK-COLOR: #4a5568;
+    --BGCOLOR: #1d1d1d;
+    --BGCOLOR: #023047;
+    --BGGRADIENT: #000000;
+    --HOME-H1-FS: clamp(30px, 4.5vw, 7vw);
+    --NAV-BG: linear-gradient(to right, #283244, #202837);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+/* -----User Styles------ */
+
+.user-page {
+    min-height: calc(100vh - 75px);
+    background: var(--NAV-BG);
+    display: flex;
+    flex-direction: column;
+    padding:
+        /* calc(10px + 10vh) */
+        0 5vw calc(10px + 10vh) 5vw;
+}
+
+.user-page .error {
+    margin-top: 10vh;
+    font-size: clamp(14px, 2vw, 25px);
+    text-align: center;
+    font-weight: 400;
+}
+
+.user-select {
+    padding-top: calc(10px + 10vh);
+    z-index: 1;
+    display: flex;
+    min-width: 250px;
+    width: 30vw;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+    flex-direction: column;
+    transition: 0.5s;
+    position: relative;
+}
+
+.user-select:hover {
+    transition: 0.5s;
+}
+
+.select-trigger {
+    height: 58px;
+    border: 3px solid white;
+    padding: 1em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.select-trigger:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.user-select .roundedBorders {
+    border-radius: 5px 5px 0 0;
+    /*     border-bottom: 1px solid var(--DARK-COLOR); */
+    /*   background-color: white; */
+    /*   color: black; */
+    transition: 0.5s;
+
+}
+
+.select-trigger .fa {
+    width: 10px;
+}
+
+.select-trigger p {
+    /*   font-weight: 900; */
+}
+
+.user-select .options {
+    position: absolute;
+    top: calc(10px + 10vh + 58px);
+    width: 100%;
+    background: var(--NAV-BG);
+    border-radius: 0 0 5px 5px;
+}
+
+.user-select .options .option {
+    position: relative;
+    padding: 1em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 2px solid var(--DARK-COLOR);
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+
+}
+
+.user-select .options .option p:hover {
+    transition: 0.7s;
+    color: white;
+}
+
+.user-select .options .option p:last-child {}
+
+.user-select .options .option:last-child {
+    border-radius: 0 0 5px 5px;
+    border-bottom: 2px solid white;
+}
+
+/* ----- Cards------ */
+.user-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+}
+
+.user-object {
+    margin-bottom: 5%;
+    border-radius: 12px;
+    width: 250px;
+    height: 464px;
+    position: relative;
+
+}
+
+.user-nft-description {
+    display: none;
+    flex-grow: 1;
+    height: 467px;
+}
+
+.user-nft-return {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.user-nft-return button {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0.5em 2em;
+    outline: none;
+    color: white;
+    font-weight: 500;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 12px;
+    transition: 1s;
+}
+
+.user-nft-return button:hover {
+    background-color: white;
+    color: black;
+    transition: 1s;
+    transform: scale(1.05);
+}
+
+.user-nft-description-text {
+    padding: 1em 1em;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.user-object-image-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-object-image-div img {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.user-object-title {
+    margin: 0.5em 0;
+    margin-top: 1em;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: center;
+
+}
+
+.user-object-info {
+    padding: 0.2em 1em;
+}
+
+.user-object-info-arg {
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.user-object-info-arg .user-info-value {
+    font-weight: 500;
+}
+
+.user-object-button-sell {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.user-object-button-sell button {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0.5em 2em;
+    outline: none;
+    color: white;
+    font-weight: 500;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 12px;
+    transition: 1s;
+}
+
+.user-object-button-sell button:hover {
+    background-color: white;
+    color: black;
+    transition: 1s;
+    transform: scale(1.05);
+}
+
+.user-normalBox {
+    background: rgb(128, 128, 128);
+    background: linear-gradient(4deg, rgba(158, 158, 158, 1) 0%, rgba(128, 128, 128, 1) 70%);
+    box-shadow: 0 0 5px rgb(128, 128, 128);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.user-rareBox {
+    background: rgb(0, 0, 255);
+    background: linear-gradient(4deg, rgba(50, 80, 215, 1) 0%, rgba(20, 20, 245, 1) 70%);
+    box-shadow: 0 0 5px rgb(0, 42, 255);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.user-legendaryBox {
+    background: rgb(255, 215, 0);
+    background: linear-gradient(4deg, rgba(235, 195, 0, 1) 0%, rgba(245, 135, 40, 1) 70%);
+    box-shadow: 0 0 5px rgb(255, 215, 0);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.user-legendaryBox:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(255, 215, 0);
+}
+
+.user-rareBox:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(0, 0, 255);
+}
+
+.user-normalBox:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgb(128, 128, 128);
+}
+
+/* .boxes-page .loading-ring {
+    display: none;
+    position: relative;
+    width: 7vh;
+    height: 7vh;
+    overflow: hidden;
+} */
+
+.loading-ring {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.loading-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin: 0.45vh;
+    border: 0.45vh solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.loading-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.loading-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.loading-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

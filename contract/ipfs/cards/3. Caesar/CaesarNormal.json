@@ -1,0 +1,23 @@
+{
+    "name": "Julius Caesar",
+    "description": "Julius Caesar was a brilliant military strategist, politician, and writer who played a critical role in the transformation of the Roman Republic into the Roman Empire. He was known for his exceptional leadership skills, strategic vision, and his ability to inspire loyalty among his troops. However, Caesar was also criticized for his ambition, his disregard for the traditional limitations of Roman power, and his tendency to engage in autocratic behavior, which ultimately led to his assassination.",
+    "image": "https://ipfs.io/ipfs/QmR6ndCwhwgmwchHbX8cBfMRzMEfVcX3NFm8uYcw2WwGDz",
+    "attributes": [
+        {
+            "trait_type": "card-type",
+            "value": "Normal"
+        },
+        {
+            "trait_type": "attack",
+            "value": 63
+        },
+        {
+            "trait_type": "defence",
+            "value": 55
+        },
+        {
+            "trait_type": "tactics",
+            "value": 68
+        }
+    ]
+}

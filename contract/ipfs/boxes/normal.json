@@ -1,0 +1,11 @@
+{
+    "name": "Normal Card-Box",
+    "description": "A normal war game chest contains a selection of normal war commanders that players can use to build their armies. These commanders are typically lower in rarity and may have more common abilities, but they can still be useful in battle.",
+    "image": "https://ipfs.io/ipfs/QmckaxZP1nKgSeHFHGQwRdQRBSWQ261kDqPCbV8sddJzEJ",
+    "attributes": [
+        {
+            "trait_type": "CARD-TYPE",
+            "value": "NORMAL"
+        }
+    ]
+}
